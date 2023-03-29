@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matahari</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing:border-box;
+        }
+
+        body{
+            height: 100vh;
+            width: 100vw;
+            overflow:hidden;
+            background-color: #353535;
+        }
+
+        .container{ 
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .matahari{
+            width:10rem;
+            height:10rem;
+            border-radius: 10rem;
+            margin: 20rem auto auto auto;
+            background-color: yellow;
+        }
+
+        .bumi{
+            width:5rem;
+            height:5rem;
+            border-radius:5rem;
+            background-color:lime;
+            margin: 10rem auto;
+            transform-origin: 2.5rem -15rem;
+            animation: bumigerak 10s infinite;
+        }
+
+        .bulan{
+            width: 3rem;
+            height: 3rem;
+            border-radius:1.5rem;
+            background-color: gray;
+            margin: 10rem 10rem;
+            animation: bulangerak 10s infinite;
+        }
+
+        @keyframes bumigerak{
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bulangerak{
+            0% {
+                transform-origin: -15rem 0rem;
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform-origin: -15rem -15rem;
+                transform: rotate(360deg);
+            }
+
+            50% {
+                /* transform-origin: -10rem -20rem; */
+                transform: rotate(720deg);
+            }
+
+            75% {
+                /* transform-origin: 0rem -15rem; */
+                transform: rotate(1080deg);
+            }
+            100% {
+                /* transform-origin: -10rem 0; */
+                transform: rotate(1420deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="matahari"></div>
+    <div class="bumi">
+        <div class="bulan"></div>  
+    </div>
+</body>
+</html>

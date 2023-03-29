@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Headline</title>
+    <style>
+        .circle{
+            width: 10rem;
+            height: 10rem;
+            margin: 3rem auto;
+            animation: moveitmoveit 5s infinite;
+            background-color: aliceblue;
+            animation-direction: normal;
+            border-radius: 5rem;
+            position: absolute;
+        }
+
+        @keyframes moveitmoveit{
+            0% {
+                background: red;
+                left: 0px;
+                top:0px;
+            }
+
+            10% {
+                background: orange;
+                left: 300px;
+                top:0px;
+            }
+
+            20% {
+                background: yellow;
+                left: 300px;
+                top:300px;
+            }
+
+            30% {
+                background: lime;
+                left: 600px;
+                top:300px;
+            }
+
+            40% {
+                background: blue;
+                left: 600px;
+                top:600px;
+            }
+
+            50% {
+                background: magenta;
+                left: 0px;
+                top:600px;
+            }
+
+            60% {
+                background: purple;
+                left: 600px;
+                top:0px;
+            }
+
+            70% {
+                background: brown;
+                left: 0px;
+                top:0px;
+            }
+
+            80% {
+                background: gray;
+                left: 600px;
+                top:600px;
+            }
+
+            90% {
+                background: black;
+                left: 300px;
+                top:300px;
+            }
+
+            100% {
+                background: white;
+                left: 0px;  
+                top:0px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+</body>
+</html>

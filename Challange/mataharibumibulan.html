@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matahari</title>
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing:border-box;
+        }
+
+        body{
+        height: 100vh;
+        width: 100vw;
+        overflow:hidden;
+        background-color: #353535;
+        }
+        .container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .solar-system{
+        position: relative;
+        width:450px;
+        height:450px;
+        animation: circle 20s linear infinite;
+        transform-origin:center center;
+        border-radius:50%;
+        border:1px solid #707070;
+        }
+
+        .sun{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:100px;
+        height:100px;
+        background-color: #FF8037;
+        border-radius:50%;
+        }
+
+        .planet{
+        position: absolute;
+        top:-60px;
+        left:50%;
+        height:150px;
+        width:150px;
+        transform:translate(-50%,-0);
+        border-radius:50%;
+        animation: circle 10s linear infinite;
+        border:1px solid #707070;
+        transform-origin:center center;
+        }
+
+        .earth{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        height: 50px;
+        width: 50px;
+        background-color: #3454FE;
+        border-radius:50px;
+        }
+
+        .moon{
+        position: absolute;
+        top:-10px;
+        left:50%;
+        transform:transalte(-50%,0);
+        background-color: #FEFAFA;
+        height:20px;
+        width:20px;
+        border-radius:50%;
+        }
+
+
+        @keyframes circle{
+        from{
+            transform:rotate(0deg);
+        }to{
+            transform:rotate(360deg);
+        }
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="solar-system">
+          <div class="sun"></div>
+          <div class="planet">
+            <div class="moon"></div>
+            <div class="earth"></div>
+          </div>
+        </div>
+</body>
+</html>

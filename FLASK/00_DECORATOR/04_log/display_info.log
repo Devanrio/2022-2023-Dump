@@ -1,0 +1,2 @@
+INFO:root:2022-10-20 16:38:56.383684 Ran with args : ('Kevin', 10) and kwargs {}
+INFO:root:2022-10-20 16:38:56.383684 Ran with args : ('1px', 'solid', 'Black') and kwargs {'margin': '10px'}
