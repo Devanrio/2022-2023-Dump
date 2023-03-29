@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- React JS -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>React</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- satu return hanya bisa satu object kecuali dipakein div -->
+    <script type="text/babel">
+
+        // untuk buat default nanti this.props.argument || isi
+        class Num extends React.Component {
+
+            constructor(props) {
+                super(props);
+                this.state = {
+                    n : 0
+                };
+            }
+
+            render(){
+                return(
+                    <div>
+                        <h2>{this.state.n}</h2>
+                        <button onClick={this.handlingClick}>Plus</button> 
+                        <button onClick={this.lower}>Minus</button>    
+                    </div>
+                )
+            }
+
+            handlingClick = () => {
+
+                this.setState(oldState => ({
+                    n : oldState.n+1
+                }))
+                // document.querySelector("h2").innerHTML = this.state.n+1;
+                // this.state.n += 1;
+            }
+
+            lower = () => {
+
+                this.setState(oldState => ({
+                    n : oldState.n-1
+                }))
+
+                // document.querySelector("h2").innerHTML = this.state.n-1;
+                // this.state.n -= 1;
+            }
+
+        }
+
+        // untuk pakai class pake format <nama /> atau <nama argument/>
+        class App extends React.Component {
+
+            render(){
+                return(
+                    <div>
+                        <Num />
+                    </div>
+                )
+            }
+
+        }
+
+        ReactDOM.render(<App />, document.getElementById("app"));
+
+    </script>
+</body>
+</html>

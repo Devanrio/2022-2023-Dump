@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket Ball Scoreboard</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            width: 150px;
+        }
+
+        .Team{
+            width: 200px;
+        }
+        
+        .Win {
+            width: 40px;
+        }
+
+        .Lose {
+            width: 40px;
+        }
+
+        .Origin {
+            width: 100px;
+        }
+        
+        td {
+            width: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Basketball Scoreboard
+    </h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="Team">Team</th>
+                <th class="Win">Win</th>
+                <th class="Lose">Lose</th>
+                <th class="Origin">Origin</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>IGS Macan</td>
+                <td>10</td>
+                <td>3</td>
+                <td rowspan="2">IGS</td>
+            </tr>
+            <tr>
+                <td>IGS Kucing</td>
+                <td>6</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Xavega</td>
+                <td>10</td>
+                <td>3</td>
+                <td>XAVEGA</td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>

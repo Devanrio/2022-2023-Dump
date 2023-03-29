@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters</title>
+    <script src="{{ url_for('static', filename='scriptgryffindor.js') }}"></script>
+    <style>
+        body{
+            display: flex;
+            flex-direction: line;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(21, 21, 21);
+            font-family: 'Playfair Display';font-size: 22px;
+        }
+
+        #left{
+            display:flex;
+            width: 70%;
+            flex-direction: column;
+            background-color:rgb(63, 63, 63);
+            margin-right: 30px;
+            align-items: center;
+        }
+
+        #right{
+            display: flex;
+            flex-direction: column;
+        }
+
+        #hplogohome{
+            width: 500px;
+            margin-top: 100px;
+        }
+
+        #hplogogryffindor{
+            width: 200px;
+        }
+
+        .options{
+            color: rgb(222, 211, 150);
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            font-size: 50px;
+        }
+
+
+        #backbutton a{
+            color: rgb(222, 211, 150);
+        }
+
+        #backbutton a:hover{
+            color: white;
+        }
+
+        #name-entry{
+            width: 700px;
+            height: 30px;
+            border-radius: 50px;
+            background-color: rgb(222, 211, 150);
+        }
+
+        #find-btn{
+            height: 40px;
+            border-radius: 50px;
+            background-color: rgb(222, 211, 150);
+            text-decoration-color: red:
+        }
+    </style>
+</head>
+<body>
+    <div id="left">
+        <div>
+            <img id="hplogohome" src="https://cdn.discordapp.com/attachments/618041723695792128/1077028500432760842/hplogo.png">
+
+            <img id="hplogogryffindor"src="https://cdn.discordapp.com/attachments/618041723695792128/1077079286395195392/pngwing.com.png">
+        </div>
+
+        <div class="main">
+            <form action="">
+                <input type="text" name="currency" id="name-entry">
+                <input type="submit" value="Find" id="find-btn">
+            </form>
+        </div>
+
+    </div>
+    <div>
+        <img src="https://cdn.discordapp.com/attachments/618041723695792128/1077094642807488562/640px-Daniel_Radcliffe_di_film_Harry_Potter_and_The_Order_of_Phoenix.png" width="200px" >
+        <div id="backbutton">
+            <a href="{{url_for('characters')}}">BACK</a>
+        </div>
+    </div>
+</body>
+</html>

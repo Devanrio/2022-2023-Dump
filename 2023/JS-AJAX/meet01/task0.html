@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding List</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function (){
+
+            document.querySelector("#submit-task").disabled = true;
+
+            document.querySelector("#entry-task").onkeyup = function(){
+
+                if(document.querySelector("#entry-task").value.trim().length > 0){
+                    document.querySelector("#submit-task").disabled = false;
+                }
+                else{
+                    document.querySelector("#submit-task").disabled = true;
+                }
+            }
+
+            document.querySelector("#entry-task").onkeydown = function(){
+
+            if(document.querySelector("#entry-task").value.trim().length > 0){
+                document.querySelector("#submit-task").disabled = false;
+            }
+            else{
+                document.querySelector("#submit-task").disabled = true;
+            }
+            }
+
+            document.querySelector("#form-task").onsubmit = function(){
+
+                const li = document.createElement('li');
+
+                li.innerHTML = document.querySelector("#entry-task").value;
+
+                document.querySelector("#tasks").append(li);
+
+                document.querySelector("#entry-task").value = "";
+
+                document.querySelector("#submit-task").disabled = true;
+
+                return false;
+
+            }
+        })
+    </script>
+
+    <style>
+        body{
+            background: url("guili2.jpg");
+            background-size: cover;
+        }
+
+        .part{
+            text-align: center;
+            align-items: center;
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 15%;
+        }
+
+        #submit-task{
+            border-radius: 50px;
+            width: 40px;
+        }
+
+        #tasks{
+            list-style: none;
+            background-color: white;
+            border-radius: 15px;
+            text-align: center;
+            justify-content: center;
+            width: 500px;
+        }
+
+        #entry-task{
+            width: 500px;
+            height: 40px;
+            border-radius: 25px;
+        }
+
+        #form-task{
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- <h1>Tugas Hari Ini: </h1> -->
+    <div class="part">
+        <img src="google logo.png" width="300">
+        <form id="form-task">
+            <input type="text" name="" id="entry-task" placeholder="Search Google or type a URL" autocomplete="off">
+            <input type="image" name="" src="kacapembesar.png" id="submit-task" alt="Submit">
+        </form>
+        <ul id="tasks"></ul>
+    </div>
+</body>
+</html>

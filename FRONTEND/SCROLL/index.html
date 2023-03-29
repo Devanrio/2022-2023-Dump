@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll!</title>
+    <script>
+        let counter = 0;
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            load()
+        })
+
+        function load(){
+            for (let i = counter; i<=counter+100; i++){
+                let paragraph = document.createElement("p");
+                paragraph.innerHTML = i;
+
+                let button = document.createElement("button");
+                button.classList.add("btn-post");
+                button.style.float = "right";
+                button.innerHTML = i;
+                button.style.width = "50px";
+
+                document.body.append(button);
+                document.body.append(paragraph);
+            }
+            counter += 100;
+        }
+        window.onscroll = ()=>{
+            console.log('---------');
+            console.log(window.innerHeight);
+            console.log(window.scrollY);
+            console.log(document.body.offsetHeight);
+            if(window.innerHeight+window.scrollY >= document.body.offsetHeight){
+                load()
+            } else {
+                document.body.style.backgroundColor = "White";
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

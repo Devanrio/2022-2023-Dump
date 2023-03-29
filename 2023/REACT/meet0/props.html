@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- React JS -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>First React</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- satu return hanya bisa satu object kecuali dipakein div -->
+    <script type="text/babel">
+
+        // untuk buat default nanti this.props.argument || isi
+        class Hello extends React.Component {
+            
+            render(){
+                return(
+                    <h1>Hello {this.props.name || "John Doe"}!</h1>
+                )
+            }
+
+        }
+        
+        class Paragraf extends React.Component {
+
+            render(){
+                return(
+                    <p>Say I'm {this.props.feeling || "Bla bla"}</p>
+                )
+            }
+
+        }
+
+        class Hi extends React.Component {
+
+            render(){
+                return(
+                    <div>
+                        <h2>Hi....</h2>
+                        <button onClick={this.handlingClick}>Click Me!</button>    
+                    </div>
+                )
+            }
+
+            handlingClick = () => {
+                alert("Hi!!!!!!!!")
+            }
+
+        }
+
+        // untuk pakai class pake format <nama /> atau <nama argument/>
+        class App extends React.Component {
+
+            render(){
+                return(
+                    <div>
+                        <Hello name="AAAA"/>
+                        <Hello />
+                        <Paragraf feeling="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil iusto inventore unde placeat adipisci quibusdam, quod reprehenderit voluptatibus tempora provident!"/>
+                        <Paragraf />
+                        <Hi />
+                    </div>
+                )
+            }
+
+        }
+
+        ReactDOM.render(<App />, document.getElementById("app"));
+
+    </script>
+</body>
+</html>

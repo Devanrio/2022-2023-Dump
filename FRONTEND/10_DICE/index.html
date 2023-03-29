@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DICE</title>
+    <style>
+        img{
+            width: 80px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script id="result" type="text/template">
+        <li>
+            You rolled:
+            {{#each values}}
+                <img src="{{this}}.jpg" alt="{{this}}" title="{{this}}">
+            {{/each}}
+        </li>
+    </script>
+    <script>
+
+        const template = Handlebars.compile(document.querySelector("#result").innerHTML);
+        document.addEventListener('DOMContentLoaded', () =>{
+            document.querySelector("#roll").onclick = () =>{
+
+                const counter = parseInt(document.querySelector("#counter").value);
+                const rolls = [];
+                let total = 0;
+                for(let i=0; i<counter; i++){
+                    const value = Math.floor(Math.random()*5)+1;
+                    rolls.push(value);
+                    total+=value;
+                }
+
+                const content = template({'values':rolls, 'total': total});
+                document.querySelector('#rolls').innerHTML += content;
+            }
+        })
+    </script>
+
+
+</head>
+<body>
+    <input type="number" name="" id="counter" placeholder="Number of rolls" min="1">
+    <button id="roll">Roll</button>
+    <ul id="rolls"></ul>
+</body>
+</html>
